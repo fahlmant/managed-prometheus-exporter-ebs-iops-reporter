@@ -16,6 +16,10 @@ objects:
       matchLabels:
         api.openshift.com/managed: 'true'
         hive.openshift.io/cluster-platform: aws
+      matchExpressions:
+      - key: api.openshift.com/sts
+        operator: NotIn
+        values:
     resourceApplyMode: Sync
     resources:
     - apiVersion: v1
